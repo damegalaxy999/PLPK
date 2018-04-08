@@ -19,8 +19,13 @@ public class Singlton<T> where T : class , new()
     }
 
     public bool _init()
-    {
-        
+    {        
         return true;
     }
+
+    //そこまでの負担を継承先にかけるのもよくないので無し
+    /*public void _reset()
+    {
+
+    }*/
 }
