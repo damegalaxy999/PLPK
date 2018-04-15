@@ -12,7 +12,7 @@ public class Singlton<T> where T : class , new()
             m_instance = new Singlton<T>();
             if(!m_instance._init())
             {
-                AcLogger.Log("Singlton Init Warning", LogLevel.LL_WARNING);
+                AcLogger.Error("Singlton Init Warning");
             }
         }
         return m_instance;

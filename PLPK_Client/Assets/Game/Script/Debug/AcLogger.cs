@@ -11,9 +11,21 @@ public enum LogLevel
 
 public class AcLogger 
 {   
-    public static void Log(string log, LogLevel level)
+    public static void Debug(string log)
     {
-        //LogLevelでなんか変える
-        Debug.Log(log);
+        UnityEngine.Debug.Log(log);
     }
+
+    public static void Warning(string log)
+    {
+        UnityEngine.Debug.LogWarning(log);
+    }
+
+
+    public static void Error(string log)
+    {
+        UnityEngine.Debug.LogError(log);
+    }
+
 }
+
