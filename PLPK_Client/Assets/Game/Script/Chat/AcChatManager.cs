@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AcChatManager : Singlton<AcChatManager>
+public class AcChatManager : LcSinglton<AcChatManager>
 {
     List<AcChatData> m_ChatDataList = new List<AcChatData>(SystemDefine.CHAT_MAX);
 

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AcNetWorkManager : Singlton<AcNetWorkManager>
+public class AcNetWorkManager : LcSinglton<AcNetWorkManager>
 {
 
     // Use this for initialization

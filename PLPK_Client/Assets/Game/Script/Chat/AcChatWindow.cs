@@ -3,12 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class AcChatWindow : MonoBehaviour
+public class AcChatWindow : MonoBehaviour ,IEvent<AcChatData>
 {
     [SerializeField] InputField m_InputField;   // 入力
     [SerializeField] Button m_SendButton;       // 送信ボタン
     [SerializeField] Text m_TextField;          // 表示部
 
+    List<AcChatData> m_ChatDataList;            // チャットデータ
+    bool m_ChatDarty = true;
+
+
+    //AcChatDataの変更通知
+    public void NotificationEvent(ref AcChatData updateData)
+    {
+
+
+    }
 
     // Use this for initialization
     void Start () {
@@ -22,7 +32,7 @@ public class AcChatWindow : MonoBehaviour
 	}
 
     // 送信ボタンの押下
-    void onSendButton()
+    void OnSendButton()
     {
         string input = GetInputString();
 

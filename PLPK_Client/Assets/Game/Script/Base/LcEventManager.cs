@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AcEventManager<T> : Singlton<AcEventManager<T>> where T : class, IEvent<T>, new()
+public class LcEventManager<T> : Singlton<LcEventManager<T>> where T : class, IEvent<T>, new()
 {    
     public List<IEvent<T>> m_eventListenerList = new List<IEvent<T>>();
 
