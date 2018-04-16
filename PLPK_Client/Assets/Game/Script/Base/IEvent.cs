@@ -4,5 +4,5 @@ using UnityEngine;
 
 public interface IEvent<T> where T : class, new()
 {
-    void NotificationEvent(ref T updateData);
+    void NotificationEventList(ref List<T> updateData);
 }

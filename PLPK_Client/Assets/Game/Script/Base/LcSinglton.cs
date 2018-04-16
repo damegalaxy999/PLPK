@@ -2,25 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Singlton<T> where T : class , new()
+public class LcSinglton<T> where T : class , new()
 {
-    protected static Singlton<T> m_instance;
-    public static Singlton<T> Instance()
+    protected static T m_instance;
+    public static T Instance()
     {
         if(m_instance == null)
         {
-            m_instance = new Singlton<T>();
-            if(!m_instance._init())
-            {
-                AcLogger.Error("Singlton Init Warning");
-            }
+            m_instance = new T();
         }
         return m_instance;
-    }
-
-    public bool _init()
-    {        
-        return true;
     }
 
     //そこまでの負担を継承先にかけるのもよくないので無し

@@ -14,7 +14,7 @@ public class AcChatWindow : MonoBehaviour ,IEvent<AcChatData>
 
 
     //AcChatDataの変更通知
-    public void NotificationEvent(ref AcChatData updateData)
+    public void NotificationEventList(ref List<AcChatData> updateData)
     {
 
 

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LcEventManager<T> : Singlton<LcEventManager<T>> where T : class, IEvent<T>, new()
+public class LcEventManager<T> : LcSinglton<LcEventManager<T>> where T : class, new()
 {    
     public List<IEvent<T>> m_eventListenerList = new List<IEvent<T>>();
 
@@ -22,11 +22,11 @@ public class LcEventManager<T> : Singlton<LcEventManager<T>> where T : class, IE
         m_eventListenerList.Remove(iEvent);
     }
 
-    public void NotificationEvent(T eventData)
+    public void NotificationEventList(ref List<T> eventData)
     {
         foreach(var listener in m_eventListenerList)
         {
-            listener.NotificationEvent(ref eventData);
+            listener.NotificationEventList(ref eventData);
         }
     }
 }

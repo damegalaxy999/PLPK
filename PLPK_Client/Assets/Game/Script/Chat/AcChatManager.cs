@@ -6,16 +6,6 @@ public class AcChatManager : LcSinglton<AcChatManager>
 {
     List<AcChatData> m_ChatDataList = new List<AcChatData>(SystemDefine.CHAT_MAX);
 
-    public new bool _init()
-    {
-        if(!base._init())
-        {
-            return false;            
-        }
-        m_ChatDataList.Clear();
-        return true;
-    }
-    
     public List<AcChatData> GetChatLogList()
     {
         return m_ChatDataList;
@@ -34,6 +24,7 @@ public class AcChatManager : LcSinglton<AcChatManager>
     public void SetAcChatDataList(List<AcChatData> chatDataList)
     {
         m_ChatDataList = chatDataList;
+        LcEventManager<AcChatData>.Instance().NotificationEventList(ref chatDataList);
     }
 
     public void AddAcChatDataList(List<AcChatData> chatDataList)

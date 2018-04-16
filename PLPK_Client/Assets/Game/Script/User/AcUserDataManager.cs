@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UserDataManager : Singlton<UserDataManager>
+public class UserDataManager : LcSinglton<UserDataManager>
 {
     AcUserData m_userData;  //ユーザーデータ
 	// Use this for initialization
